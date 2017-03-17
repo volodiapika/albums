@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Час створення: Бер 14 2017 р., 02:53
+-- Час створення: Бер 17 2017 р., 21:50
 -- Версія сервера: 5.7.16
 -- Версія PHP: 7.1.0
 
@@ -39,10 +39,10 @@ CREATE TABLE `albums` (
 --
 
 INSERT INTO `albums` (`id`, `name`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Jamison Ward II', '2017-03-13 21:53:31', '2017-03-13 21:53:31', NULL),
-(2, 'Sydnee Jacobi', '2017-03-13 21:53:31', '2017-03-13 21:53:31', NULL),
-(3, 'Asa Koelpin', '2017-03-13 21:53:31', '2017-03-13 21:53:31', NULL),
-(4, 'Marjory Homenick', '2017-03-13 21:53:31', '2017-03-13 21:53:31', NULL);
+(1, 'Dr. Jailyn Kuvalis IV', '2017-03-17 16:46:46', '2017-03-17 16:46:46', NULL),
+(2, 'Frederique Kuhic', '2017-03-17 16:46:46', '2017-03-17 16:46:46', NULL),
+(3, 'Alisa Doyle PhD', '2017-03-17 16:46:46', '2017-03-17 16:46:46', NULL),
+(4, 'Grady Wisoky', '2017-03-17 16:46:46', '2017-03-17 16:46:46', NULL);
 
 -- --------------------------------------------------------
 
@@ -72,8 +72,8 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 CREATE TABLE `photos` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `photo_url` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `album_id` int(10) UNSIGNED DEFAULT NULL,
+  `photourl` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `albumid` int(10) UNSIGNED DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL
@@ -83,56 +83,56 @@ CREATE TABLE `photos` (
 -- Дамп даних таблиці `photos`
 --
 
-INSERT INTO `photos` (`id`, `name`, `photo_url`, `album_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Mina Pfannerstill', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(2, 'Dr. Pasquale West', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(3, 'Lela Stoltenberg', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(4, 'Janet Feil', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(5, 'Dr. Vito McCullough', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(6, 'Prof. Thad Reilly', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(7, 'Katlynn Harvey', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(8, 'Dr. Rebeka Jaskolski', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(9, 'Mireille Cronin', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(10, 'Santina Gaylord', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(11, 'Ms. Maeve Frami MD', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(12, 'Dr. Jeramie Koss II', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(13, 'Gladyce Cummings', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(14, 'Dorothea Rippin', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(15, 'Ross Bahringer', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(16, 'Emily Jaskolski', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(17, 'Mrs. Elouise McDermott', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(18, 'Edwin Ward', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(19, 'Conner Ebert', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(20, 'Urban Waters', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(21, 'Ms. Victoria Corkery', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(22, 'Leland Davis', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(23, 'Theodora Dibbert', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(24, 'Prof. Isabelle Labadie II', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(25, 'Samantha Leannon', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(26, 'Kyle Harris Jr.', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(27, 'Judah Abernathy DVM', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(28, 'Naomie Carter', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(29, 'Mrs. Mikayla Spencer', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(30, 'Pauline Mosciski', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(31, 'Carmine Stamm', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(32, 'Keira Dooley V', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(33, 'Juliet Kuhn', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(34, 'Justice Corwin', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(35, 'Keanu Herzog', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(36, 'Ervin Parker', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(37, 'Ms. Zoila Schroeder II', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(38, 'Alexzander Hintz Jr.', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(39, 'Eldora Berge Jr.', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(40, 'Mr. Desmond Wisozk IV', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(41, 'Jose D\'Amore', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(42, 'Ola Kilback', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(43, 'Ted Bechtelar', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(44, 'Prof. Dandre Friesen Jr.', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(45, 'Fabiola Champlin', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(46, 'Jesse Huel', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 1, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(47, 'Velma Dooley', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(48, 'Mattie Ebert', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 2, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL),
-(49, 'Prof. Franz Corkery', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-13 21:53:34', '2017-03-13 21:53:34', NULL);
+INSERT INTO `photos` (`id`, `name`, `photourl`, `albumid`, `created_at`, `updated_at`, `deleted_at`) VALUES
+(1, 'Coy Robel', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(2, 'Valentine Harber', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(3, 'Dr. Odessa Legros Sr.', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(4, 'Gillian Toy', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(5, 'Hyman Kihn', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(6, 'Miss Janice Gottlieb DVM', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(7, 'Edwardo O\'Connell', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(8, 'Maeve Swaniawski', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(9, 'Aurelie Mohr', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(10, 'Aidan Robel Sr.', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(11, 'Jamison Brown MD', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(12, 'Violette Hand', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(13, 'Nakia Considine', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(14, 'Israel Towne', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(15, 'Aileen Abernathy', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(16, 'Kelly Keeling II', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(17, 'Miss Audra Koepp', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(18, 'Brianne Dibbert', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(19, 'Mr. Arlo Kunze', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(20, 'Mrs. Rosemary Towne II', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(21, 'Ken Sipes', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(22, 'Jillian Kemmer', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(23, 'Sigrid Grimes', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(24, 'Miss Petra Steuber V', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(25, 'King Ward', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(26, 'Ulices Barrows', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(27, 'Ms. Alia Nader DVM', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(28, 'Ciara Klocko', 'http://vignette2.wikia.nocookie.net/pokemony/images/4/4c/Ash%27s_Pikachu.png/revision/latest?cb=20140316095658&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(29, 'Durward Jenkins', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(30, 'Colton Lockman', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(31, 'Claudie Cruickshank DDS', 'http://vignette2.wikia.nocookie.net/pokemony/images/d/dd/Ash_DP_1.png/revision/latest/zoom-crop/width/90/height/55?cb=20140315213314&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(32, 'Gregory Leannon', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(33, 'Rubye Dietrich PhD', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(34, 'Clifford Jacobson', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(35, 'Pete Murray DDS', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(36, 'Christina Hirthe Sr.', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(37, 'Yasmin Crist', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(38, 'Eldon Rowe', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(39, 'Dr. Tony Herzog', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(40, 'Jarret Dickinson IV', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(41, 'Matilda Bergstrom', 'http://vignette2.wikia.nocookie.net/pokemony/images/c/ca/First_Meeting.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160235&path-prefix=pl', 1, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(42, 'Lowell Balistreri', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 3, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(43, 'Chase Schaefer', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(44, 'Shyann Orn', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/ba/Pikachu_loves_ketchup.png/revision/latest/zoom-crop/width/90/height/55?cb=20120720152603&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(45, 'Mr. Mathew Kerluke PhD', 'http://vignette3.wikia.nocookie.net/pokemony/images/c/c2/Pikachu_Static.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160244&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(46, 'Ms. Velma Schumm', 'http://vignette1.wikia.nocookie.net/pokemony/images/3/3a/Ash_and_his_Pikachu.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160321&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(47, 'Alexandrea Swaniawski', 'http://vignette4.wikia.nocookie.net/pokemony/images/2/27/Ash_1st_Pok%C3%A9_Ball.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160238&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(48, 'Cassandre Emmerich', 'http://vignette4.wikia.nocookie.net/pokemony/images/b/b6/Ash_Pikachu_contest.png/revision/latest/zoom-crop/width/90/height/55?cb=20111016172127&path-prefix=pl', 4, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL),
+(49, 'Prof. Marquis McCullough V', 'http://vignette1.wikia.nocookie.net/pokemony/images/8/83/Pikachu_Bad_Mood.png/revision/latest/zoom-crop/width/90/height/55?cb=20130112160322&path-prefix=pl', 2, '2017-03-17 16:46:51', '2017-03-17 16:46:51', NULL);
 
 --
 -- Індекси збережених таблиць
@@ -150,7 +150,7 @@ ALTER TABLE `albums`
 --
 ALTER TABLE `photos`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `photos_album_id_foreign` (`album_id`);
+  ADD KEY `photos_albumid_foreign` (`albumid`);
 
 --
 -- AUTO_INCREMENT для збережених таблиць
@@ -174,7 +174,7 @@ ALTER TABLE `photos`
 -- Обмеження зовнішнього ключа таблиці `photos`
 --
 ALTER TABLE `photos`
-  ADD CONSTRAINT `photos_album_id_foreign` FOREIGN KEY (`album_id`) REFERENCES `albums` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `photos_albumid_foreign` FOREIGN KEY (`albumid`) REFERENCES `albums` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

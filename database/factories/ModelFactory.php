@@ -1,26 +1,30 @@
 <?php
+/**
+ * Create albums table
+ *
+ * @category  CreateAlbumsTable
+ * @package   CreateAlbumsTable
+ * @author    Volodia Pika <volodia.pika@gmail.com>
+ * @copyright 2006-2017 Volodia Pika
+ * @license   GNU General Public License version 1
+ * @link      https://bitbucket.org/icyklop/laravel-model-project
+ */
+$factory->define(
+    App\Albums::class,
+    function (Faker\Generator $faker) {
+        return [
+                'name'    => $faker->name,
+                'photoid' => $faker->photoid,
+               ];
+    }
+);
 
-/*
-|--------------------------------------------------------------------------
-| Model Factories
-|--------------------------------------------------------------------------
-|
-| Here you may define all of your model factories. Model factories give
-| you a convenient way to create models for testing and seeding your
-| database. Just tell the factory how a default model should look.
-|
-*/
-
-$factory->define(App\Albums::class, function (Faker\Generator $faker) {
-    return [
-        'name' => $faker->name,
-        'photo_id' => $faker->photo_id
-    ];
-});
-
-$factory->define(App\Photos::class, function (Faker\Generator $faker) {
-    return [
-    	'name' => $faker->name,
-        'photo_url' => $faker->photo_url
-    ];
-});
+$factory->define(
+    App\Photos::class,
+    function (Faker\Generator $faker) {
+        return [
+                'name'     => $faker->name,
+                'photourl' => $faker->photourl,
+               ];
+    }
+);

@@ -31,7 +31,7 @@
   <h3>Album <b>{!! $album->name !!}</b></h3><br>
   <div class="row">
     <p>{!! $photo->name !!}</p>
-    <img src="{!! $photo->photo_url !!}" alt="{!! $photo->name !!}" class="img-responsive" style="width:100%"> 
+    <img src="{!! $photo->photourl !!}" alt="{!! $photo->name !!}" class="img-responsive" style="width:100%"> 
   </div>
 </div><br>
 

@@ -44,7 +44,7 @@
       <div class="col-sm-3">
         <p>{!! $photo->name !!}</p>
         <a href="/photo/show/{!! $photo->id !!}">
-          <img src="{!! $photo->photo_url !!}" alt="{!! $photo->name !!}" class="img-responsive" style="width:250px;">
+          <img src="{!! $photo->photourl !!}" alt="{!! $photo->name !!}" class="img-responsive" style="width:250px;">
         </a>
       </div>
       @endforeach
